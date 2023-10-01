@@ -1,0 +1,103 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj": {}
+  },
+  "projects": {
+    "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj",
+        "projectName": "csharp_api",
+        "projectPath": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj",
+        "packagesPath": "C:\\Users\\Abraham Hernandez\\.nuget\\packages\\",
+        "outputPath": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Abraham Hernandez\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "C:\\Program Files\\dotnet\\sdk\\7.0.308\\Sdks\\Microsoft.NET.Sdk.Web\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.1": {
+            "targetAlias": "netcoreapp2.1",
+            "projectReferences": {
+              "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam\\csharp_web.csproj": {
+                "projectPath": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam\\csharp_web.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.1": {
+          "targetAlias": "netcoreapp2.1",
+          "dependencies": {
+            "Microsoft.AspNetCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.1, )",
+              "autoReferenced": true
+            },
+            "Microsoft.AspNetCore.Razor.Design": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.1.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.308\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam\\csharp_web.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam\\csharp_web.csproj",
+        "projectName": "csharp_web",
+        "projectPath": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam\\csharp_web.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}
