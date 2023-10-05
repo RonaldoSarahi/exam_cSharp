@@ -21,9 +21,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("Acerca de", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contacto", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Catálago de Articulos", "Index", "Articulos")</li>
                 </ul>
             </div>
         </div>
@@ -38,6 +36,14 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/js/gridmvc-ajax.js" type="text/javascript"></script>
+    <script src="~/lib/URI.js/URI.js" type="text/javascript"></script>
     @RenderSection("scripts", required: false)
+    @section styles{
+        @Styles.Render("~/Content/Gridmvc")
+    }
+    @section scripts{
+        @Scripts.Render("~/bundles/Gridmvc")
+    }
 </body>
 </html>

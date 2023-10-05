@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Mvc;
 
-namespace csharp_web
+namespace csharp_api
 {
     public class FilterConfig
     {

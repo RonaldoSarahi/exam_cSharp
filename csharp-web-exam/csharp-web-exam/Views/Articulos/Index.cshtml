@@ -1,0 +1,121 @@
+﻿@using Newtonsoft.Json;
+@model IEnumerable<csharp_web.Models.Articulos>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="row">
+    <div class="col-12">
+        <form id="FormArticulosID">
+            <fieldset>
+                <legend>Agregar Articulos </legend>
+                <div>
+                    <label for="Articulo">Articulo:</label>
+                    <input id="NomArticuloID" class="form-control" type="text" name="Articulo" value="" />
+                </div>
+                <div>
+                    <label for="Descripcion">Descripcion:</label>
+                    <input id="DescArticuloID" class="form-control" type="text" name="Descripcion" value="" />
+                </div>
+                <div>
+                    <label>&nbsp;</label>
+                    <a class="btn btn-primary" onclick="GetArticulos()"> Guardar</a>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <table class="table table-striped">
+            <thead>
+            <th scope="col">
+                Nombre
+            </th>
+            <th scope="col">
+                Descripcion
+            </th>
+            <th scope="col">
+                <!--Icono engrane-->
+                <i class="glyphicon-asterisk"></i>
+            </th>
+            </thead>
+            <tbody>
+                @{ int i = 0;
+                    foreach (var Articulo in Model)
+                    {
+                        <tr>
+                            <th scope="row">
+                                @(++i)
+                            </th>
+                            <td>
+                                @Articulo.Articulo
+                            </td>
+                            <td>
+                                @Articulo.Descripcion
+                            </td>
+                            <td>
+                                <a class="btn btn-warning" onclick="editArticulo(@JsonConvert.SerializeObject(Articulo))"><i class=glyphicon-pencil></i></a>
+                            </td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+<script>
+    async function GetArticulos() {
+        /* let response = await fetch('http://localhost:5002/api/articulos');
+        let data = await response.json()
+        return data; */
+
+        let response = await fetch('http://localhost:5002/api/articulos', {
+            method: 'GET',
+            //body: JSON.stringify(objArticulo),
+            headers: {
+                'Content-Type': 'application/json'
+         }
+    }
+
+    async function editArticulo(object) {
+        console.log(object)
+    }
+
+    async function GuardarArt() {
+          
+        const Art = document.getElementById('NomArticuloID')
+        const DesArt = document.getElementById('DescArticuloID')
+
+        const objArticulo = {
+            Articulo: Art.value,
+            Descripcion: DesArt.value
+        }
+
+        await fetch('http://localhost:5002/api/articulos', {
+            method: 'POST',
+            body: JSON.stringify(objArticulo),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+
+        }).then(res => res.json())
+            .then(res => { GetArticulos() })
+            .catch(err => { console.log(err) })
+
+    }</script>
+
+<script>
+    $(function () {
+        pageGrids.ArticulosGrid.onRowSelect(function (e) {
+            console.log(e);
+        });
+    });
+</script>
+
+

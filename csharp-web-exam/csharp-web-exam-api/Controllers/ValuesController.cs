@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace csharp_web.Controllers
+namespace csharp_api.Controllers
 {
     [Route("api/values")]
     [ApiController]

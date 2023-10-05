@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nKCgcmJG5pErf6xH4Sm7gludPxmdcWWq5Ym/tRPp6pCpBou7myJBiJ8mlL6+pn5ONrTlpCP3wU3kK1IPAMBBaQ==",
+  "dgSpecHash": "Pwspd1n39kmmv2XjtGWpIxzAVb5tRNsIE8QsCCJQYooy1c4cEbqm1pBD5JgRar3iRKghteXMZHybQxnRBKkhAg==",
   "success": true,
-  "projectFilePath": "C:\\Ronaldo\\Examen_C#\\csharp-web-exam-master\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj",
+  "projectFilePath": "C:\\Ronaldo\\ProyExamen\\Ronaldo\\exam_cSharp\\csharp-web-exam\\csharp-web-exam-api\\csharp_api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Abraham Hernandez\\.nuget\\packages\\microsoft.aspnet.webapi.client\\5.2.6\\microsoft.aspnet.webapi.client.5.2.6.nupkg.sha512",
     "C:\\Users\\Abraham Hernandez\\.nuget\\packages\\microsoft.aspnetcore\\2.1.1\\microsoft.aspnetcore.2.1.1.nupkg.sha512",

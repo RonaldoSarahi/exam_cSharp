@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.Mvc;
 using System.Web.Routing;
 
-namespace csharp_web
+namespace csharp_api
 {
     public class RouteConfig
     {
@@ -16,7 +16,7 @@ namespace csharp_web
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                defaults: new { controller = "Articulos", action = "Index", id = UrlParameter.Optional }
             );
         }
     }

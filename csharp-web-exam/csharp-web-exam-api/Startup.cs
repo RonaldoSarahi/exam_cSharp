@@ -18,7 +18,7 @@ namespace csharp_api
 {
     public class Startup
     {
-        private readonly string SacsCORSPolicy = "_sacsCORSPolicy";
+        private readonly string cSharpCORSPolicy = "cSharpCORSPolicy";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -36,14 +36,17 @@ namespace csharp_api
 
             // Adding CORS policies
             services.AddCors(options => {
-                options.AddPolicy(SacsCORSPolicy,
+                options.AddPolicy(cSharpCORSPolicy,
                     builder => {
                         builder.WithOrigins(
-                                "https://localhost:5001",
-                                "https://localhost:5000",
-                                "https://localhost:5002",
-                                "http://localhost:5002",
-                                "http://localhost:5000")
+                             "https://localhost:5001",
+                            "https://localhost:5000",
+                            "https://localhost:5002",
+                            "http://localhost:5002",
+                            "http://localhost:5000",
+                            "https://localhost:44339",
+                            "http://localhost:44339")
+
                             .AllowAnyHeader()
                             .AllowAnyMethod();
                     });
@@ -65,6 +68,7 @@ namespace csharp_api
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            app.UseCors(cSharpCORSPolicy);
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

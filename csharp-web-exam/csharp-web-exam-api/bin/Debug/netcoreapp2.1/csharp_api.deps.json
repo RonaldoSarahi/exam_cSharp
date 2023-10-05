@@ -30,8 +30,7 @@
         "dependencies": {
           "Microsoft.AspNetCore.App": "2.1.1",
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
-          "Microsoft.NETCore.App": "2.1.0",
-          "csharp_web": "1.0.0"
+          "Microsoft.NETCore.App": "2.1.0"
         },
         "runtime": {
           "csharp_api.dll": {}
@@ -41,112 +40,6 @@
         }
       },
       "Microsoft.AspNetCore.Razor.Design/2.1.2": {},
-      "csharp_web/1.0.0": {
-        "runtime": {
-          "csharp-web-exam.dll": {}
-        },
-        "resources": {
-          "es/System.Web.Optimization.resources.dll": {
-            "locale": "es"
-          },
-          "es/System.Web.Mvc.resources.dll": {
-            "locale": "es"
-          },
-          "es/System.Web.WebPages.resources.dll": {
-            "locale": "es"
-          },
-          "es/System.Web.WebPages.Razor.resources.dll": {
-            "locale": "es"
-          },
-          "es/System.Web.Razor.resources.dll": {
-            "locale": "es"
-          },
-          "es/System.Web.WebPages.Deployment.resources.dll": {
-            "locale": "es"
-          }
-        },
-        "compile": {
-          "csharp-web-exam.dll": {}
-        }
-      },
-      "System.Web.Optimization/1.1.0.0": {
-        "runtime": {
-          "System.Web.Optimization.dll": {
-            "assemblyVersion": "1.1.0.0",
-            "fileVersion": "1.1.40211.0"
-          }
-        },
-        "resources": {
-          "es/System.Web.Optimization.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
-      "System.Web.Mvc/5.2.9.0": {
-        "runtime": {
-          "System.Web.Mvc.dll": {
-            "assemblyVersion": "5.2.9.0",
-            "fileVersion": "5.2.61129.10"
-          }
-        },
-        "resources": {
-          "es/System.Web.Mvc.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
-      "System.Web.WebPages/3.0.0.0": {
-        "runtime": {
-          "System.Web.WebPages.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.61129.10"
-          }
-        },
-        "resources": {
-          "es/System.Web.WebPages.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
-      "System.Web.WebPages.Razor/3.0.0.0": {
-        "runtime": {
-          "System.Web.WebPages.Razor.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.61129.10"
-          }
-        },
-        "resources": {
-          "es/System.Web.WebPages.Razor.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
-      "System.Web.Razor/3.0.0.0": {
-        "runtime": {
-          "System.Web.Razor.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.61129.10"
-          }
-        },
-        "resources": {
-          "es/System.Web.Razor.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
-      "System.Web.WebPages.Deployment/3.0.0.0": {
-        "runtime": {
-          "System.Web.WebPages.Deployment.dll": {
-            "assemblyVersion": "3.0.0.0",
-            "fileVersion": "3.0.61129.10"
-          }
-        },
-        "resources": {
-          "es/System.Web.WebPages.Deployment.resources.dll": {
-            "locale": "es"
-          }
-        }
-      },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
         "dependencies": {
           "Newtonsoft.Json": "11.0.2",
@@ -3282,41 +3175,6 @@
       "sha512": "sha512-fe1+dpy+eM4IX1zodsvkihO1Spuj0NecfStWzvkYoMo7/ziOsqSv4vFK36ZpBfHa4gpdCEwaU46EPzdq+ZDYhQ==",
       "path": "microsoft.aspnetcore.razor.design/2.1.2",
       "hashPath": "microsoft.aspnetcore.razor.design.2.1.2.nupkg.sha512"
-    },
-    "csharp_web/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.Optimization/1.1.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.Mvc/5.2.9.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.WebPages/3.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.WebPages.Razor/3.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.Razor/3.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "System.Web.WebPages.Deployment/3.0.0.0": {
-      "type": "reference",
-      "serviceable": false,
-      "sha512": ""
     },
     "Microsoft.AspNet.WebApi.Client/5.2.6": {
       "type": "package",
