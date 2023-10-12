@@ -1,121 +1,136 @@
-﻿@using Newtonsoft.Json;
+﻿@using GridMvc.Html;
+@using Newtonsoft.Json;
 @model IEnumerable<csharp_web.Models.Articulos>
 
-@{
-    ViewBag.Title = "Index";
-}
+@{ ViewBag.Title = "Catálogo de Articulos"; }
 
-<div class="row">
-    <div class="col-12">
-        <form id="FormArticulosID">
-            <fieldset>
-                <legend>Agregar Articulos </legend>
-                <div>
-                    <label for="Articulo">Articulo:</label>
-                    <input id="NomArticuloID" class="form-control" type="text" name="Articulo" value="" />
-                </div>
-                <div>
-                    <label for="Descripcion">Descripcion:</label>
-                    <input id="DescArticuloID" class="form-control" type="text" name="Descripcion" value="" />
-                </div>
-                <div>
-                    <label>&nbsp;</label>
-                    <a class="btn btn-primary" onclick="GetArticulos()"> Guardar</a>
-                </div>
-            </fieldset>
-        </form>
 
+<div class="container ">
+    <div class="row">
+        <div class="col-12">
+            <p>Catálogo de Articulos</p>
+        </div>
+        <div class="col-12">
+            <partial id="partialGridViewId">
+                @Html.Partial("_GridView", Model)
+            </partial>
+        </div>
+    </div>
+
+
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <partial id="updateModalPartialId">
+                    @Html.Partial("UpdateModal", new csharp_web.Models.Articulos())
+                </partial>
+            </div>
+        </div>
     </div>
 </div>
-<div class="row">
-    <div class="col-12">
-        <table class="table table-striped">
-            <thead>
-            <th scope="col">
-                Nombre
-            </th>
-            <th scope="col">
-                Descripcion
-            </th>
-            <th scope="col">
-                <!--Icono engrane-->
-                <i class="glyphicon-asterisk"></i>
-            </th>
-            </thead>
-            <tbody>
-                @{ int i = 0;
-                    foreach (var Articulo in Model)
-                    {
-                        <tr>
-                            <th scope="row">
-                                @(++i)
-                            </th>
-                            <td>
-                                @Articulo.Articulo
-                            </td>
-                            <td>
-                                @Articulo.Descripcion
-                            </td>
-                            <td>
-                                <a class="btn btn-warning" onclick="editArticulo(@JsonConvert.SerializeObject(Articulo))"><i class=glyphicon-pencil></i></a>
-                            </td>
-                        </tr>
-                    }
+    <script>
+        async function editArticulo(artId) {
+            await fetch('/Articulo/ShowArticulo?' + new URLSearchParams({
+                articuloId: artId
+            }), {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/html'
                 }
-            </tbody>
-        </table>
-    </div>
-</div>
-
-
-
-<script>
-    async function GetArticulos() {
-        /* let response = await fetch('http://localhost:5002/api/articulos');
-        let data = await response.json()
-        return data; */
-
-        let response = await fetch('http://localhost:5002/api/articulos', {
-            method: 'GET',
-            //body: JSON.stringify(objArticulo),
-            headers: {
-                'Content-Type': 'application/json'
-         }
-    }
-
-    async function editArticulo(object) {
-        console.log(object)
-    }
-
-    async function GuardarArt() {
-          
-        const Art = document.getElementById('NomArticuloID')
-        const DesArt = document.getElementById('DescArticuloID')
-
-        const objArticulo = {
-            Articulo: Art.value,
-            Descripcion: DesArt.value
+            }).then(res => res.text())
+                .then(res => {
+                    $('#updateModalPartialId').html(res);   
+                    $('#btnModalSubmitNew').hide();
+                    $('#myModal').modal('show');
+                }).catch(err => {
+                    console.log(err);
+                    })
         }
 
-        await fetch('http://localhost:5002/api/articulos', {
-            method: 'POST',
-            body: JSON.stringify(objArticulo),
-            headers: {
-                'Content-Type': 'application/json'
+        async function newArticulo() {
+            $('#myModalLabel')[0].textContent = 'Agregar Articulo';
+            $('#btnModalSubmitUpdate').hide();
+            $('#btnModalSubmitNew').show();
+            $('#updateModalForm_ArticuloFieldID')[0].value = '';
+            $('#updateModalForm_descripcionFieldId')[0].value = '';
+            $('#myModal').modal('show');
+        }
+
+
+        async function refreshGrid() {
+            await fetch('/Articulo/partialGridView', {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/html'
+                }
+            }).then(res => res.text())
+                .then(res => {
+                    $('#partialGridViewId').html(res);
+                }).catch(err => {
+                    console.log(err);
+                })
+        }
+
+        async function saveUpdate(objArticulo) {
+
+            const articuloField = document.getElementById('updateModalForm_ArticuloFieldID');
+            const descField = document.getElementById('updateModalForm_descripcionFieldId');
+
+            if (!articuloField || !descField) {
+                alert("Faltan campos obligatorios");
+            } else {
+
+                let newArticulo = {
+                    articulo: articuloField.value,
+                    descripcion: descField.value,
+                }
+
+                await fetch('http://localhost:5002/api/articulos/' + objArticulo.articulo, {
+                    method: 'PUT',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(modArticulo)
+                })
+                    .then(res => {
+                        refreshGrid();
+                    }).catch(err => {
+                        console.log(err);
+                    });
             }
+        }
 
-        }).then(res => res.json())
-            .then(res => { GetArticulos() })
-            .catch(err => { console.log(err) })
+        async function saveNew() {
+            const articuloField = document.getElementById('updateModalForm_ArticuloFieldID');
+            const descField = document.getElementById('updateModalForm_descripcionFieldId');
 
-    }</script>
+            if (!articuloField || !descField) {
+                alert("Faltan campos obligatorios");
+            } else {
 
-<script>
-    $(function () {
-        pageGrids.ArticulosGrid.onRowSelect(function (e) {
-            console.log(e);
-        });
-    });
+                let newArticulo = {
+                    articulo: articuloField.value,
+                    descripcion: descField.value,
+                }
+
+                console.log(newArticulo);
+
+                await fetch('http://localhost:5002/api/articulos', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify(newArticulo)
+                })
+                    .then(res => {
+                       // refreshGrid();
+                        let myModal = $('#myModal');
+                        myModal.modal('hide')
+                    }).catch(err => {
+                        console.log(err);
+                    });
+            }
+        }
 </script>
 
 

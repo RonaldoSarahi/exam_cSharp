@@ -1,0 +1,42 @@
+
+@model IEnumerable<csharp_web.Models.Articulos>
+
+
+<table class="table table-striped">
+    <thead>
+    <th scope="col">
+        N° Registro
+    </th>
+    <th scope="col">
+        Articulo
+    </th>
+    <th scope="col">
+        Descripción
+    </th>
+    <th scope="col">
+        <!--Boton-->
+        Opciones
+    </th>
+    </thead>
+    <tbody>
+        @{ int i = 0;
+            foreach (var Articulo in Model)
+            {
+                <tr>
+                    <th scope="row">
+                        @(++i)
+                    </th>
+                    <td>
+                        @Articulo.Articulo
+                    </td>
+                    <td>
+                        @Articulo.Descripcion
+                    </td>
+                    <td>
+                        <a class="btn btn-primary" onclick="newArticulo()">Agregar</a>
+                        <a class="btn btn-warning" onclick="editArticulo(@Articulo.Articulo)">Editar</a>
+                    </td>
+                </tr>
+            } }
+    </tbody>
+</table>

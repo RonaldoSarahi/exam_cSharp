@@ -132,3 +132,4 @@ C:\Ronaldo\ProyExamen\Ronaldo\exam_cSharp\csharp-web-exam\csharp-web-exam\obj\De
 C:\Ronaldo\ProyExamen\Ronaldo\exam_cSharp\csharp-web-exam\csharp-web-exam\obj\Debug\csharp_web.csproj.CopyComplete
 C:\Ronaldo\ProyExamen\Ronaldo\exam_cSharp\csharp-web-exam\csharp-web-exam\obj\Debug\csharp-web-exam.dll
 C:\Ronaldo\ProyExamen\Ronaldo\exam_cSharp\csharp-web-exam\csharp-web-exam\obj\Debug\csharp-web-exam.pdb
+C:\Ronaldo\ProyExamen\Ronaldo\exam_cSharp\csharp-web-exam\csharp-web-exam\bin\GridMvc.dll
